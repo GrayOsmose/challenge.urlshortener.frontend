@@ -1,0 +1,34 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  
+  <h1 class="navbar-brand mb-0">Url shortener</h1>
+
+  <button class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="nav-link active"
+          [routerLink]=" ['./'] "
+          routerLinkActive="active"
+          [routerLinkActiveOptions]= "{exact: true}">
+        Home
+      </a>
+
+      <a class="nav-link"
+        [routerLink]=" ['./urls'] "
+        routerLinkActive="active"
+        [routerLinkActiveOptions]= "{exact: true}">
+        Urls
+      </a>
+
+    </div>
+  </div>
+</nav>

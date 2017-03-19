@@ -32,20 +32,6 @@ describe(`App`, () => {
     fixture.detectChanges(); // trigger initial data binding
   });
 
-  it(`should be readly initialized`, () => {
-    expect(fixture).toBeDefined();
-    expect(comp).toBeDefined();
-  });
-
-  it(`should be @AngularClass`, () => {
-  });
-
-  it('should log ngOnInit', () => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
-
-    comp.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
-  });
+  // ToDo : [tests] add tests
 
 });

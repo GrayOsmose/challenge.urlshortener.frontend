@@ -24,6 +24,7 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
+import { NavigationComponent } from './navigation';
 
 // common modules
 import { CommonModule } from '../common';
@@ -35,7 +36,8 @@ import { CommonModule } from '../common';
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
