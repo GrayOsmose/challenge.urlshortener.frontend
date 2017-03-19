@@ -2,18 +2,25 @@ import {
   NgModule
 } from '@angular/core';
 
-// App is our top level component
-import { NoContentComponent } from './no-content';
+import { HttpModule } from '@angular/http';
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
+import { NoContentComponent } from './no-content';
+import { UrlService } from './data/url/url.service';
+import { UserService } from './data/user/user.service';
+
 @NgModule({
   declarations: [
     NoContentComponent
   ],
   exports: [
     NoContentComponent
+  ],
+  imports: [
+    HttpModule
+  ],
+  providers: [
+    UrlService,
+    UserService
   ]
 })
 export class CommonModule {
