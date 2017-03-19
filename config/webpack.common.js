@@ -25,7 +25,7 @@ const autoprefixer = require('autoprefixer');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Url shortener',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
