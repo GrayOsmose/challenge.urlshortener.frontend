@@ -24,6 +24,7 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
+import { UrlsComponent } from './urls';
 import { NavigationComponent } from './navigation';
 
 // common modules
@@ -37,6 +38,7 @@ import { CommonModule } from '../common';
   declarations: [
     AppComponent,
     HomeComponent,
+    UrlsComponent,
     NavigationComponent
   ],
   imports: [ // import Angular's modules
