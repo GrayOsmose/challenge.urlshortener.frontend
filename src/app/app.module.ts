@@ -5,11 +5,13 @@ import {
   NgModule,
   ApplicationRef
 } from '@angular/core';
+
 import {
   removeNgStyles,
   createNewHosts,
   createInputTransfer
 } from '@angularclass/hmr';
+
 import {
   RouterModule,
   PreloadAllModules
@@ -26,12 +28,14 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home';
 import { UrlComponent } from './home/url';
+import { UrlsComponent } from './home/urls';
 
-import { UrlsComponent } from './urls';
 import { NavigationComponent } from './navigation';
 
 // common modules
 import { CommonModule } from '../common';
+
+import '../assets/styles/main.scss';
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process

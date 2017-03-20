@@ -14,9 +14,7 @@ import {
 import { MockBackend } from '@angular/http/testing';
 
 // Load the implementations that should be tested
-import { AppState } from '../app.service';
 import { UrlsComponent } from './urls.component';
-import { Title } from './title';
 
 describe(`Home`, () => {
   let comp: UrlsComponent;
@@ -36,9 +34,7 @@ describe(`Home`, () => {
             return new Http(backend, defaultOptions);
           },
           deps: [MockBackend, BaseRequestOptions]
-        },
-        AppState,
-        Title,
+        }
       ]
     })
     .compileComponents(); // compile template and css

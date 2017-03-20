@@ -5,7 +5,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { UserModel } from './user.model';
 
 @Injectable()
-export class UserService {
+export class AuthService {
 
   private static defaultPath: string = '/api/user/';
   private static UserSessionKey: string = 'UserKey';
@@ -14,7 +14,7 @@ export class UserService {
 
   constructor (private http: Http) {
     this.currentUser = <UserModel> JSON.parse(sessionStorage.
-                                                   getItem(UserService.UserSessionKey));
+                                                   getItem(AuthService.UserSessionKey));
 
     if (this.currentUser !== null) { return; }
 
@@ -41,7 +41,7 @@ export class UserService {
   private setUserData(user: UserModel): void {
     this.currentUser = user;
 
-    sessionStorage.setItem(UserService.UserSessionKey,
+    sessionStorage.setItem(AuthService.UserSessionKey,
                                        JSON.stringify(this.currentUser));
   }
 }
