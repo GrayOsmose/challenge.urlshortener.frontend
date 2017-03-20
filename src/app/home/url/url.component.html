@@ -1,0 +1,29 @@
+<form novalidate #urlForm="ngForm" (ngSubmit)="urlForm.valid && changeUrl(urlInput.value)">
+  <div class="input-group">
+
+    <input type="text"
+           class="form-control"
+           id="url"
+           placeholder="Your original URL here"
+           aria-describedby="basic-addon3"
+           name="url"
+           pattern="^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$"
+           required
+           ngModel
+           #urlInput="ngModel">
+
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="submit">Shorten Url</button>
+    </span>
+  </div>
+
+  <div *ngIf="urlInput.errors && (urlInput.dirty ||urlInput.touched)"
+        class="alert alert-danger">
+      <div [hidden]="!urlInput.errors.required">
+        Url is required
+      </div>
+      <div [hidden]="!urlInput.errors.pattern">
+        Invalid Url.
+      </div>
+  </div>
+</form>

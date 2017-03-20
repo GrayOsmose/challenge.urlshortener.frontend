@@ -23,7 +23,10 @@ import { ROUTES } from './app.routes';
 
 // App is our top level component
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './home';
+import { UrlComponent } from './home/url';
+
 import { UrlsComponent } from './urls';
 import { NavigationComponent } from './navigation';
 
@@ -38,6 +41,7 @@ import { CommonModule } from '../common';
   declarations: [
     AppComponent,
     HomeComponent,
+    UrlComponent,
     UrlsComponent,
     NavigationComponent
   ],
