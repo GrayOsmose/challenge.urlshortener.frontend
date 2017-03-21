@@ -11,7 +11,7 @@
     <tr *ngFor="let url of urls">
       <td>{{url.url}}</td>
       <td>{{url.createdDate}}</td>
-      <td>{{url.key}}</td>
+      <td><a href="http://localhost:50631/{{reroutePath + url.key}}">{{reroutePath + url.key}}</a></td>
       <td>{{url.clicks}}</td>
     </tr>
   </tbody>

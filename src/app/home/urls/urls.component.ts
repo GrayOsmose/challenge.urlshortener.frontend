@@ -10,4 +10,6 @@ import { UrlModel } from '../../../common/data/url/url.model';
 })
 export class UrlsComponent {
   @Input() public urls: UrlModel[];
+
+  public reroutePath: string = '/api/r/';
 }

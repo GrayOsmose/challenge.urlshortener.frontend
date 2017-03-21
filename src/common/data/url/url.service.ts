@@ -9,7 +9,7 @@ import { UrlModel } from './url.model';
 
 @Injectable()
 export class UrlService {
-  private defaultPath: string = 'http://localhost:50631/api/urls/';
+  private defaultPath: string = 'http://localhost:50631/api/url/';
 
   constructor (private http: Http) {  }
 
@@ -38,8 +38,9 @@ export class UrlService {
   }
 
   private extractData(res: Response) {
+
     let body = res.json();
-    return body.data || { };
+    return body || { };
   }
 
   private handleError (error: Response | any) {
