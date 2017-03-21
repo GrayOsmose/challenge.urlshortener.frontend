@@ -8,11 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let url of urls">
+      <td>{{url.url}}</td>
+      <td>{{url.createdDate}}</td>
+      <td>{{url.key}}</td>
+      <td>{{url.clicks}}</td>
     </tr>
   </tbody>
 </table>

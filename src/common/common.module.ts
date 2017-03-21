@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 
 import { NoContentComponent } from './no-content';
 import { UrlService } from './data/url/url.service';
-import { AuthService } from './data/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { AuthService } from './data/auth/auth.service';
     HttpModule
   ],
   providers: [
-    UrlService,
-    AuthService
+    UrlService
   ]
 })
 export class CommonModule {
