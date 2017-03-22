@@ -10,9 +10,9 @@
   <tbody>
     <tr *ngFor="let url of urls">
       <td>{{url.url}}</td>
-      <td>{{url.createdDate}}</td>
-      <td><a href="http://localhost:50631/{{reroutePath + url.key}}">{{reroutePath + url.key}}</a></td>
-      <td>{{url.clicks}}</td>
+      <td>{{url.creationDate | date: 'shortDate'}}</td>
+      <td><a href="http://localhost:50631/{{reroutePath + url.key}}">{{url.key}}</a></td>
+      <td>{{url.clickCount}}</td>
     </tr>
   </tbody>
 </table>

@@ -1,9 +1,9 @@
 export class UrlModel {
 
   public url: string = null;
-  public createdDate: Date = null;
+  public creationDate: Date = null;
   public key: string = null;
-  public clicks: number = null;
+  public clickCount: number = null;
 
   public isValid(): boolean {
 

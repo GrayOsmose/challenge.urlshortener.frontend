@@ -14,25 +14,22 @@ export class UrlService {
   constructor (private http: Http) {  }
 
   public getUrls(): Observable<UrlModel[]> {
-    return this.http.get(this.defaultPath)
+
+    return this.http.get(this.defaultPath, this.GetRequestOptions())
                     .map(this.extractData)
                     .catch(this.handleError);
   }
 
   public addUrl(url: string): Observable<UrlModel> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers });
 
-    return this.http.post(this.defaultPath, { url }, options)
+    return this.http.post(this.defaultPath, { url }, this.GetRequestOptions())
                     .map(this.extractData)
                     .catch(this.handleError);
   }
 
   public deleteUrl(key: string): Observable<string> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers, body: { key } });
 
-    return this.http.delete(this.defaultPath, options)
+    return this.http.delete(this.defaultPath + `/${key}`, this.GetRequestOptions())
                     .map(this.extractData)
                     .catch(this.handleError);
   }
@@ -52,5 +49,15 @@ export class UrlService {
 
 
     return Observable.throw(errMsg);
+  }
+
+  private GetRequestOptions(): RequestOptions {
+
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
+
+    return new RequestOptions({ headers, withCredentials: true });
   }
 }
