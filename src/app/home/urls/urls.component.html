@@ -5,14 +5,21 @@
       <th>Created</th>
       <th>Short URL</th>
       <th>Clicks</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let url of urls">
       <td>{{url.url}}</td>
       <td>{{url.creationDate | date: 'shortDate'}}</td>
-      <td><a href="http://localhost:50631/{{reroutePath + url.key}}">{{url.key}}</a></td>
+      <td>
+        <button class="btn btn-primary" (click)="copy(url.key)">Copy</button>
+        <a href="http://localhost:50631/{{reroutePath + url.key}}">{{url.key}}</a>
+      </td>
       <td>{{url.clickCount}}</td>
+      <td>
+        <button class="btn btn-inverse" (click)="delete(url.key)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>

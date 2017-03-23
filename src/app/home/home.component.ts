@@ -30,15 +30,22 @@ export class HomeComponent implements OnInit {
     this.addUrl(urlModel.url);
   }
 
+  public handleUrlDelete(key: string): void {
+
+    if (!key) { return; }
+
+    this.deleteUrl(key);
+  }
+
   private addUrl(url): void {
     this.urlService.addUrl(url)
                    .subscribe((urlModel) => this.urls.push(urlModel),
                               (error) => { /* do something about error */});
   }
 
-  private deleteUrl(urlModel): void {
-    this.urlService.deleteUrl(urlModel.key)
-                   .subscribe((key) => this.urls = this.urls.filter((model) => model.key === key),
+  private deleteUrl(key: string): void {
+    this.urlService.deleteUrl(key)
+                   .subscribe((keySubscription) => this.urls = this.urls.filter((value) => value.key === keySubscription),
                               (error) => { /* do something about error */});
   }
 }

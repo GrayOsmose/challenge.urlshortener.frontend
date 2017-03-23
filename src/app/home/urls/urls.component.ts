@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { UrlModel } from '../../../common/data/url/url.model';
 
@@ -10,6 +10,15 @@ import { UrlModel } from '../../../common/data/url/url.model';
 })
 export class UrlsComponent {
   @Input() public urls: UrlModel[];
+  @Output() public urlDelete = new EventEmitter<string>();
 
   public reroutePath: string = 'api/r/';
+
+  public copy(key) {
+
+  }
+
+  public delete(key): void {
+    this.urlDelete.emit(key);
+  }
 }

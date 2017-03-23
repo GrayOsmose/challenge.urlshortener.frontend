@@ -29,7 +29,7 @@ export class UrlService {
 
   public deleteUrl(key: string): Observable<string> {
 
-    return this.http.delete(this.defaultPath + `/${key}`, this.GetRequestOptions())
+    return this.http.delete(this.defaultPath + `${key}`, this.GetRequestOptions())
                     .map(this.extractData)
                     .catch(this.handleError);
   }
