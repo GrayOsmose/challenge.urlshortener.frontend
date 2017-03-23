@@ -13,7 +13,7 @@
       <td>{{url.url}}</td>
       <td>{{url.creationDate | date: 'shortDate'}}</td>
       <td>
-        <button class="btn btn-primary" (click)="copy(url.key)">Copy</button>
+        <!-- <button class="btn btn-primary" (click)="copy(url.key)">Copy</button> -->
         <a href="http://localhost:50631/{{reroutePath + url.key}}">{{url.key}}</a>
       </td>
       <td>{{url.clickCount}}</td>

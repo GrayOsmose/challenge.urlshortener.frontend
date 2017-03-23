@@ -15,7 +15,7 @@ export class UrlsComponent {
   public reroutePath: string = 'api/r/';
 
   public copy(key) {
-
+    // todo
   }
 
   public delete(key): void {
